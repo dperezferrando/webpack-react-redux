@@ -1,7 +1,12 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
 
 module.exports = {
   entry: "./client/app.js",
+  output: {
+    path: path.join(__dirname, '/../server/public'),
+    filename: "[name].js"
+  },
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
@@ -11,7 +16,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './server/public/index.html'
+      template: './server/index.html'
     })
   ],
   node: { fs: 'empty' },
