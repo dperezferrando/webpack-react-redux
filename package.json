@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "dev": "webpack --config ./webpack/webpack.config.js --mode development && node server/index.js",
-    "prod": "webpack --mode production"
+    "dev": "rm -rf ./server/public && webpack --config ./webpack/webpack.config.js --mode development && node server/index.js",
+    "prod": "rm -rf ./server/public && webpack --config ./webpack/webpack.config.js --mode production && node server/index.js"
   },
   "repository": {
     "type": "git",
