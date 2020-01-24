@@ -1,0 +1,19 @@
+{
+  "name": "frase-de-la-decada",
+  "version": "1.0.0",
+  "description": "Sistema de votacion de la frase de la decada 2010s",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dperezferrando/frase-de-la-decada.git"
+  },
+  "author": "Punchbang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dperezferrando/frase-de-la-decada/issues"
+  },
+  "homepage": "https://github.com/dperezferrando/frase-de-la-decada#readme"
+}
