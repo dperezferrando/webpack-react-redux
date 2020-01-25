@@ -1,6 +1,6 @@
 module.exports = {
 
   mongo: {
-    uri: process.env.MONGO_URI || "mongodb://localhost/frasedeladecada-test"
+    uri: process.env.MONGO_URI || "mongodb://localhost/webpack-react-redux-test"
   }
 };
