@@ -1,9 +1,13 @@
-const express = require("express")
+const express = require("express");
 const path = require("path");
-const app = express()
+const mongoose = require("mongoose");
+const config = require('./config');
+const app = express();
 const PORT = process.env.PORT || 9001; 
 const PUBLIC_DIR = path.join(__dirname, '/../public');
 
+mongoose.connect(config.mongo.uri, config.mongo.options);
+mongoose.Promise = require("bluebird");
 
 
 app.use("/api/test", (req, res) => res.send({ test: "hola "}));
@@ -14,4 +18,13 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
-app.listen(PORT,  () => console.log(`Server listening on port ${PORT}!`));
+app.listen(PORT,  () => startUpMessage());
+
+
+const startUpMessage = () => {
+  console.log("------------------------------------------------------");
+  console.log("ENVIRONMENT:", process.env.NODE_ENV)
+  console.log(`Server listening on port ${PORT}!`)
+  console.log("CONNECTED TO:", config.mongo.uri)
+  console.log("------------------------------------------------------");
+}
