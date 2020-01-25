@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import exampleReducer from "./example";
+import example from "./example";
 
 
 const rootReducer = combineReducers({
-  exampleReducer
+  example
 })
 
 

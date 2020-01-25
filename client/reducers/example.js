@@ -4,5 +4,6 @@ import { Types } from "../actions/example";
     switch(action.type) {
       case Types.TEST:
         return {...state, message: "EXAMPLE" }
+      default: return state;
     }
  }
