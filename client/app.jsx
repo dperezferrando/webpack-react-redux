@@ -1,19 +1,16 @@
-import React from "react";
+import { Component } from "react";
 import ReactDOM from "react-dom";
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
-
+import { Provider } from "react-redux";
+import store from "./store/index";
 
 const HolaMundo = () => <h1>Hola Mundo</h1>;  
 const Test = () => <h1>TEST</h1>
 
-class App extends React.Component {  
-  render() {    
-    return <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={HolaMundo}/>
-        <Route exact path="/test" component={Test}/>
-      </Switch>
-    </BrowserRouter>
+class App extends Component {  
+  render() {
+    return <Provider store={store}>
+      <Routes/>
+    </Provider>
   }
 }
 
