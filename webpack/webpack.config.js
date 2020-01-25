@@ -16,6 +16,9 @@ const commonConfig = {
       use: ['babel-loader']
     }]  
   },
+  resolve: {
+    extensions: [".js", ".jsx", ".json"]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './server/index.html'
