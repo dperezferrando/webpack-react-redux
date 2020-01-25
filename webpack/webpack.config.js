@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
   entry: "./client/app.jsx",
   output: {
-    path: path.join(__dirname, '/../server/public'),
+    path: path.join(__dirname, '/../public'),
     filename: "[name].js"
   },
   module: {

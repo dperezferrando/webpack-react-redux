@@ -1,0 +1,11 @@
+{
+    "verbose": false,
+    "watch": [
+      "client/app.jsx",
+      "server",
+      "webpack"
+    ],
+    "exec": "rm -rf ./server/public && webpack --config ./webpack/webpack.config.js --mode development && node server/index.js",
+    "ext": "js json jsx css"
+
+}
