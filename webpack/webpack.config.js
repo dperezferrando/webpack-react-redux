@@ -1,7 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const _ = require("lodash");
 
-module.exports = {
+const commonConfig = {
   entry: "./client/app.jsx",
   output: {
     path: path.join(__dirname, '/../public'),
@@ -20,5 +22,25 @@ module.exports = {
     })
   ],
   node: { fs: 'empty' },
+};
+
+const devConfig = {
   devtool: 'inline-source-map'
 };
+
+const prodConfig = {
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
+  }
+};
+
+const configMap = {
+  development: devConfig,
+  test: devConfig,
+  production: prodConfig
+}
+
+
+module.exports = () => {
+  return _.assign({}, configMap[process.env.NODE_ENV], commonConfig);
+}
