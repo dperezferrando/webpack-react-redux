@@ -3,11 +3,11 @@ import { createEpicMiddleware } from 'redux-observable';
 import rootReducer from "../reducers";
 import rootEpic from "../epics";
 
-//window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-
 const epicMiddleware = createEpicMiddleware();
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(epicMiddleware)));
 
 epicMiddleware.run(rootEpic);
 
