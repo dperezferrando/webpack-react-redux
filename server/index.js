@@ -12,7 +12,6 @@ if(process.env.NODE_ENV == "development")
 
 mongoose.connect(config.mongo.uri, config.mongo.options);
 mongoose.Promise = require("bluebird");
-console.log("ASDASD", process.env.test)
 
 app.use("/api/test", (req, res) => res.send({ test: "hola "}));
 

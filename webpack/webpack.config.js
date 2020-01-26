@@ -4,7 +4,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const _ = require("lodash");
 const webpack = require("webpack");
 const { envVars } = require('./setUpLocalEnv');
-console.log("EEE", envVars)
 
 const commomPlugins = [
   new HtmlWebpackPlugin({
@@ -51,6 +50,5 @@ const configMap = {
 
 
 module.exports = () => {
-  console.log("ZZZ", _.merge({}, commonConfig, configMap[process.env.NODE_ENV]))
   return _.merge({}, commonConfig, configMap[process.env.NODE_ENV]);
 }
